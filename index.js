@@ -25,6 +25,10 @@ app.use('/auth',authRoutes);
 app.use('/staff',staffRoutes);
 app.use('/principal',pricipalRoutes)
 
+app.get('/', (req, res) => {
+  res.send('Hello from Node.js on Live Netwok');
+});
+
 connectDB().then(()=>{
     app.listen(port,()=>{
         console.log(`Server is started successfully at ${port}`);
